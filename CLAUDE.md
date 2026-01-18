@@ -38,7 +38,7 @@ Agent Mail will assign you a unique name (e.g., BlueHill, GreenCastle). Always u
 1. Ensure project exists in Agent Mail
 2. Register with Agent Mail (you will receive an assigned name)
 3. Pause 30 seconds to wait other agents to register and ask user to tell you when you can proceed
-4. Use `list_agents` to see all agents registered in Agent Mail
+4. Check registered agents using Agent Mail resource system (see "Agent Discovery" below)
 5. If you see less than 2 other agents registered, wait 30 seconds more and go to step 4.
 6. Send introduction to all other agents (see "Introduction Protocol" below)
 7. Pause 30 seconds to wait other agents to introduce themselves 
@@ -48,9 +48,23 @@ Agent Mail will assign you a unique name (e.g., BlueHill, GreenCastle). Always u
 
 ## Introduction Protocol
 
-After registering in Agent Mail, introduce yourself to all other agents by sending message to all other agents (from `list_agents`) with subject="Introduction: I am <your role>", body_md="I am <your assigned name>, role **<your role>**.", and thread_id="introductions".
+After registering in Agent Mail, introduce yourself to all other agents by sending message to all other agents (discovered via Agent Discovery below) with subject="Introduction: I am <your role>", body_md="I am <your assigned name>, role **<your role>**.", and thread_id="introductions".
 
 Check the "introductions" thread to learn the name-to-role mapping for all agents.
+
+## Agent Discovery
+
+To discover all agents registered in the project, use the MCP resource system:
+
+```
+ReadMcpResourceTool with:
+- server: "mcp-agent-mail"
+- uri: "resource://agents/{project_key}"
+```
+
+Where `{project_key}` is the absolute path to your working directory (e.g., `/data/projects/demo-natcat-monitor`).
+
+This returns a list of all registered agents with their names and details. Use the agent names from this list when sending messages via Agent Mail.
 
 ## LeadDev: First Steps
 
