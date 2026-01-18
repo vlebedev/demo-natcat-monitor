@@ -4,7 +4,7 @@ Pure functions for exposure calculation - no I/O, no UI dependencies.
 """
 
 import math
-from src.models import Earthquake, Treaty, ExposureAlert
+from .models import Earthquake, Treaty, ExposureAlert
 
 
 def calculate_distance_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:

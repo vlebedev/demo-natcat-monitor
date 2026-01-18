@@ -9,15 +9,9 @@ import folium
 from streamlit_folium import st_folium
 from datetime import datetime
 
-from src.models import Earthquake, Treaty, ExposureAlert
-from src.services import find_exposed_treaties, summarize_exposure
-
-# Try to import data functions - may not be available yet
-try:
-    from src.data import fetch_earthquakes, load_treaties
-    DATA_AVAILABLE = True
-except ImportError:
-    DATA_AVAILABLE = False
+from .models import Earthquake, Treaty, ExposureAlert
+from .services import find_exposed_treaties, summarize_exposure
+from .data import fetch_earthquakes, load_treaties
 
 
 def get_magnitude_color(magnitude: float) -> str:
@@ -173,12 +167,6 @@ def main():
             format_func=lambda x: f"Last {x} days",
             index=0
         )
-
-    # Check if data module is available
-    if not DATA_AVAILABLE:
-        st.warning("⏳ Waiting for data module (src/data.py) to be implemented...")
-        st.info("The data layer is being implemented by the DataDev agent. Please wait or check back shortly.")
-        return
 
     # Clear cache on refresh
     if refresh_clicked:
