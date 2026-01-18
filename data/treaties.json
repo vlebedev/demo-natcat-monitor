@@ -1,0 +1,52 @@
+[
+  {
+    "id": "T001",
+    "name": "California Quake XL",
+    "peril": "EQ",
+    "region": "US-CA",
+    "latitude": 36.7783,
+    "longitude": -119.4179,
+    "radius_km": 400,
+    "limit_usd": 50000000
+  },
+  {
+    "id": "T002",
+    "name": "Japan Quake QS",
+    "peril": "EQ",
+    "region": "JP",
+    "latitude": 35.6762,
+    "longitude": 139.6503,
+    "radius_km": 500,
+    "limit_usd": 75000000
+  },
+  {
+    "id": "T003",
+    "name": "Chile Quake XL",
+    "peril": "EQ",
+    "region": "CL",
+    "latitude": -33.4489,
+    "longitude": -70.6693,
+    "radius_km": 300,
+    "limit_usd": 30000000
+  },
+  {
+    "id": "T004",
+    "name": "Pacific Ring Cat",
+    "peril": "EQ",
+    "region": "APAC",
+    "latitude": 0,
+    "longitude": 150,
+    "radius_km": 3000,
+    "limit_usd": 100000000
+  },
+  {
+    "id": "T005",
+    "name": "Turkey Quake Fac",
+    "peril": "EQ",
+    "region": "TR",
+    "latitude": 39.9334,
+    "longitude": 32.8597,
+    "radius_km": 400,
+    "limit_usd": 25000000
+  }
+]
