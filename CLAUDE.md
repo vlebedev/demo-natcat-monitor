@@ -12,7 +12,7 @@ Read these files before starting work:
 
 Run this command to determine your agent ID:
 ```bash
-tmux display-message -p '#{pane_title}'
+/usr/bin/tmux display-message -p '#{pane_title}'
 ```
 
 Parse the suffix (e.g., `natcat__cc_1` → `cc_1`) and look up your role:
